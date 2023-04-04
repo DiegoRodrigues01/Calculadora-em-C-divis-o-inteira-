@@ -1,25 +1,58 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33205.214
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercio_03", "exercio_03\exercio_03.csproj", "{D3FE1467-45EB-4FBE-A94A-45C2377BFCA5}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D3FE1467-45EB-4FBE-A94A-45C2377BFCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3FE1467-45EB-4FBE-A94A-45C2377BFCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3FE1467-45EB-4FBE-A94A-45C2377BFCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3FE1467-45EB-4FBE-A94A-45C2377BFCA5}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A6F1B64A-05A4-48AB-8FA0-EEA93592F315}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace exercio_03
+{
+    public partial class Calculadadora : Form
+    {
+        public Calculadadora()
+        {
+            InitializeComponent();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Calculadadora_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_calcular_Click(object sender, EventArgs e)
+        {
+            int dividendo, divisor;
+            int quocinte, restos;
+
+            dividendo =int.Parse (txt_dividendo.Text);
+            divisor=int.Parse (txt_divisor.Text);
+
+            quocinte = dividendo / divisor;
+            restos = dividendo % divisor;
+            
+            txt_Quociente.Text=quocinte.ToString();
+            txt_restos.Text=restos.ToString();
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            txt_dividendo.Clear();
+            txt_divisor.Text = "";
+            txt_restos.Clear();
+            txt_Quociente.Clear();
+        }
+    }
+}
